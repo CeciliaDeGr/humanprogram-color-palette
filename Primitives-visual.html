@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primitives Color Palette</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(135deg, #1B1F29 0%, #2C264C 100%);
+      min-height: 100vh;
+      padding: 48px;
+      color: #F3F7FC;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: #868281;
+      font-size: 1rem;
+      margin-bottom: 48px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #E9EDF5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #444554 0%, transparent 100%);
+    }
+
+    .color-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .color-card {
+      width: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #2a2d3a;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .color-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
+    .color-swatch {
+      height: 80px;
+      position: relative;
+    }
+
+    .color-swatch.checkerboard {
+      background-image: 
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 12px 12px;
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+    }
+
+    .color-swatch .overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .color-info {
+      padding: 12px;
+    }
+
+    .color-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #B6B4B3;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .color-value {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #F3F7FC;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .opacity-section .color-row {
+      gap: 8px;
+    }
+
+    .opacity-section .color-card {
+      width: 100px;
+    }
+
+    .opacity-section .color-swatch {
+      height: 60px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 24px;
+      }
+      
+      .color-card {
+        width: calc(50% - 6px);
+      }
+
+      .opacity-section .color-card {
+        width: calc(33.33% - 6px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Primitives</h1>
+  <p class="subtitle">Design System Color Tokens</p>
+
+  <div class="section">
+    <h2 class="section-title">White</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFFFFF;"></div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">#FFFFFF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Neutral</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F3F7FC;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#F3F7FC</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #E9EDF5;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#E9EDF5</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #DAD9D9;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter 2</div>
+          <div class="color-value">#DAD9D9</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #B6B4B3;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#B6B4B3</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #868281;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#868281</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #585756;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#585756</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #444554;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#444554</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #1B1F29;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#1B1F29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Lilac</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F4F2FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#F4F2FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #E9E5FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#E9E5FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #B3A6FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#B3A6FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #9381FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#9381FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #7567CC;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#7567CC</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #413872;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#413872</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #2C264C;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#2C264C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Romantic</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFF7F2;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#FFF7F2</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFE3D1;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#FFE3D1</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFD8BE;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#FFD8BE</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFBE93;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#FFBE93</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #DBA481;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#DBA481</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #A67150;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#A67150</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #573D2B;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#573D2B</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Froly</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFE8E8;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#FFE8E8</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FCCFCF;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#FCCFCF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FFB3B3;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#FFB3B3</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FF8686;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#FF8686</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #B44C4A;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#B44C4A</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #5C2726;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#5C2726</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #4A2323;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#4A2323</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Malibu</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F1FBFF;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#F1FBFF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #E4F7FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#E4F7FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #A0E3FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#A0E3FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #78D7FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#78D7FF</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #60ACCC;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#60ACCC</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #296E90;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#296E90</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #1B3F5A;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#1B3F5A</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Green</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FCFFF5;"></div>
+        <div class="color-info">
+          <div class="color-name">Lightest</div>
+          <div class="color-value">#FCFFF5</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FAFFEB;"></div>
+        <div class="color-info">
+          <div class="color-name">Lighter</div>
+          <div class="color-value">#FAFFEB</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F0FFBA;"></div>
+        <div class="color-info">
+          <div class="color-name">Light</div>
+          <div class="color-value">#F0FFBA</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #EAFF9D;"></div>
+        <div class="color-info">
+          <div class="color-name">Default</div>
+          <div class="color-value">#EAFF9D</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #BBCC7D;"></div>
+        <div class="color-info">
+          <div class="color-name">Dark</div>
+          <div class="color-value">#BBCC7D</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #5D663E;"></div>
+        <div class="color-info">
+          <div class="color-name">Darker</div>
+          <div class="color-value">#5D663E</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #464C2F;"></div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">#464C2F</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section opacity-section">
+    <h2 class="section-title">White Opacity</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Transparent</div>
+          <div class="color-value">0%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.05);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">5%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.10);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">10%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.15);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">15%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.20);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">20%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.30);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">30%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.40);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">40%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.50);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">50%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(255,255,255,0.60);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-value">60%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section opacity-section">
+    <h2 class="section-title">Neutral Darkest Opacity</h2>
+    <div class="color-row">
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.05);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">5%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.10);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">10%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.15);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">15%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.20);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">20%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.30);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">30%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.40);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">40%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.50);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">50%</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch checkerboard">
+          <div class="overlay" style="background: rgba(27,35,41,0.60);"></div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Darkest</div>
+          <div class="color-value">60%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
