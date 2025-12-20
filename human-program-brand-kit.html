@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Program — Brand Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Neutral */
+      --white: #FFFFFF;
+      --neutral-lightest: #EBEFF8;
+      --neutral-lighter: #C8CEDA;
+      --neutral-lighter-2: #C8CEDA;
+      --neutral-light: #A5ACBA;
+      --neutral: #82899A;
+      --neutral-dark: #5F6678;
+      --neutral-darker: #3C4354;
+      --neutral-darkest: #1B1F29;
+      
+      /* Lilac */
+      --lilac-lightest: #F4F2FF;
+      --lilac-lighter: #E9E5FF;
+      --lilac-light: #B3A6FF;
+      --lilac: #9381FF;
+      --lilac-dark: #7567CC;
+      --lilac-darker: #413872;
+      --lilac-darkest: #2C264C;
+      
+      /* Romantic */
+      --romantic-lightest: #FFF7F2;
+      --romantic-lighter: #FFE3D1;
+      --romantic-light: #FFD8BE;
+      --romantic: #FFBE93;
+      --romantic-dark: #DBA481;
+      --romantic-darker: #A67150;
+      --romantic-darkest: #573D2B;
+      
+      /* Froly */
+      --froly-lightest: #FFE8E8;
+      --froly-lighter: #FCCFCF;
+      --froly-light: #FFB3B3;
+      --froly: #FF8686;
+      --froly-dark: #B44C4A;
+      --froly-darker: #5C2726;
+      --froly-darkest: #4A2323;
+      
+      /* Malibu */
+      --malibu-lightest: #F1FBFF;
+      --malibu-lighter: #E4F7FF;
+      --malibu-light: #A0E3FF;
+      --malibu: #78D7FF;
+      --malibu-dark: #60ACCC;
+      --malibu-darker: #296E90;
+      --malibu-darkest: #1B3F5A;
+      
+      /* Green */
+      --green-lightest: #FCFFF5;
+      --green-lighter: #FAFFEB;
+      --green-light: #F0FFBA;
+      --green: #EAFF9D;
+      --green-dark: #BBCC7D;
+      --green-darker: #5D663E;
+      --green-darkest: #464C2F;
+      
+      /* UI */
+      --radius-none: 0px;
+      --radius-xs: 5px;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 50px;
+      --radius-round: 999px;
+      --border-width: 1px;
+      --divider-width: 2px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--neutral-darkest);
+      line-height: 1.5;
+    }
+    
+    /* Page setup for landscape PDF */
+    @page {
+      size: landscape;
+      margin: 0;
+    }
+    
+    .page {
+      width: 1440px;
+      min-height: 900px;
+      padding: 64px;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page:last-child {
+      page-break-after: auto;
+    }
+    
+    /* Cover Page */
+    .cover {
+      background: var(--neutral-darkest);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .cover-logo {
+      margin-bottom: 48px;
+    }
+    
+    .cover h1 {
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    
+    .cover h1 span {
+      font-weight: 400;
+      display: block;
+      margin-top: -4px;
+    }
+    
+    .cover-subtitle {
+      font-size: 22px;
+      color: var(--neutral-light);
+      margin-top: 16px;
+      font-weight: 400;
+    }
+    
+    .cover-date {
+      position: absolute;
+      bottom: 64px;
+      font-size: 14px;
+      color: var(--neutral);
+    }
+    
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 48px;
+    }
+    
+    .section-number {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--lilac);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    
+    .section-title {
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--neutral-darkest);
+    }
+    
+    .section-desc {
+      font-size: 18px;
+      color: var(--neutral);
+      margin-top: 12px;
+      max-width: 600px;
+    }
+    
+    /* Logo Page */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+    
+    .logo-card {
+      border-radius: var(--radius-md);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+    
+    .logo-card.dark {
+      background: var(--neutral-darkest);
+    }
+    
+    .logo-card.light {
+      background: var(--neutral-lightest);
+    }
+    
+    .logo-card.lilac {
+      background: var(--lilac);
+    }
+    
+    .logo-card-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 24px;
+    }
+    
+    .logo-card.dark .logo-card-label {
+      color: var(--neutral);
+    }
+    
+    .logo-card.light .logo-card-label {
+      color: var(--neutral-dark);
+    }
+    
+    .logo-card.lilac .logo-card-label {
+      color: var(--white);
+    }
+    
+    /* Logo SVG */
+    .logo-icon {
+      width: 61px;
+      height: 64px;
+    }
+    
+    .logo-full {
+      height: 56px;
+    }
+    
+    .logo-stacked {
+      height: 120px;
+    }
+    
+    /* Color Palette */
+    .color-section {
+      margin-bottom: 48px;
+    }
+    
+    .color-section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--neutral-darkest);
+    }
+    
+    .color-row {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .color-swatch {
+      flex: 1;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    
+    .color-swatch-block {
+      height: 80px;
+      position: relative;
+    }
+    
+    .color-swatch-info {
+      padding: 12px;
+      background: var(--white);
+      border: 1px solid var(--neutral-lighter);
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    }
+    
+    .color-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--neutral-darkest);
+      margin-bottom: 4px;
+    }
+    
+    .color-hex {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--neutral);
+    }
+    
+    /* Typography */
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .type-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 120px 120px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--neutral-lighter);
+    }
+    
+    .type-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--lilac-dark);
+    }
+    
+    .type-sample {
+      color: var(--neutral-darkest);
+    }
+    
+    .type-size {
+      font-size: 14px;
+      color: var(--neutral);
+      font-family: monospace;
+    }
+    
+    .type-size-mobile {
+      font-size: 14px;
+      color: var(--neutral-light);
+      font-family: monospace;
+    }
+    
+    .h1-sample { font-size: 72px; font-weight: 700; line-height: 1.1; }
+    .h2-sample { font-size: 52px; font-weight: 700; line-height: 1.15; }
+    .h3-sample { font-size: 44px; font-weight: 600; line-height: 1.2; }
+    .h4-sample { font-size: 36px; font-weight: 600; line-height: 1.25; }
+    .h5-sample { font-size: 28px; font-weight: 600; line-height: 1.3; }
+    .h6-sample { font-size: 22px; font-weight: 600; line-height: 1.35; }
+    .text-lg { font-size: 22px; font-weight: 400; }
+    .text-md { font-size: 18px; font-weight: 400; }
+    .text-reg { font-size: 16px; font-weight: 400; }
+    .text-sm { font-size: 14px; font-weight: 400; }
+    .text-xs { font-size: 12px; font-weight: 400; }
+    
+    /* Spacing & Sizing */
+    .spacing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+    
+    .spacing-group {
+      background: var(--neutral-lightest);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+    
+    .spacing-group-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--neutral-darkest);
+      margin-bottom: 20px;
+    }
+    
+    .spacing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--neutral-lighter);
+    }
+    
+    .spacing-item:last-child {
+      border-bottom: none;
+    }
+    
+    .spacing-name {
+      font-size: 14px;
+      color: var(--neutral-dark);
+    }
+    
+    .spacing-values {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .spacing-value {
+      font-size: 14px;
+      font-weight: 600;
+      font-family: monospace;
+      color: var(--neutral-darkest);
+    }
+    
+    .spacing-value.mobile {
+      color: var(--neutral);
+    }
+    
+    /* UI Styles */
+    .ui-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+    }
+    
+    .ui-group {
+      background: var(--neutral-lightest);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+    
+    .ui-group-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--neutral-darkest);
+      margin-bottom: 24px;
+    }
+    
+    .radius-samples {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .radius-sample {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .radius-box {
+      width: 72px;
+      height: 72px;
+      background: var(--lilac);
+    }
+    
+    .radius-label {
+      font-size: 12px;
+      color: var(--neutral-dark);
+      text-align: center;
+    }
+    
+    .radius-label span {
+      display: block;
+      font-family: monospace;
+      color: var(--neutral);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    
+    .stroke-samples {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .stroke-sample {
+      flex: 1;
+    }
+    
+    .stroke-demo {
+      height: 48px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .stroke-demo.border {
+      border: 1px solid var(--neutral-dark);
+    }
+    
+    .stroke-demo.divider {
+      border: 2px solid var(--neutral-dark);
+    }
+    
+    .stroke-label {
+      font-size: 12px;
+      color: var(--neutral-dark);
+      margin-top: 12px;
+      text-align: center;
+    }
+    
+    .stroke-label span {
+      display: block;
+      font-family: monospace;
+      color: var(--neutral);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    
+    /* Opacity */
+    .opacity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    
+    .opacity-section {
+      background: var(--neutral-lightest);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    
+    .opacity-section.dark-demo {
+      background: var(--neutral-darkest);
+    }
+    
+    .opacity-section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--neutral-darkest);
+      margin-bottom: 16px;
+    }
+    
+    .opacity-section.dark-demo .opacity-section-title {
+      color: var(--white);
+    }
+    
+    .opacity-row {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .opacity-swatch {
+      flex: 1;
+      height: 48px;
+      border-radius: var(--radius-xs);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+    }
+    
+    .opacity-swatch span {
+      font-size: 10px;
+      font-weight: 600;
+    }
+    
+    /* Page decoration */
+    .page-footer {
+      position: absolute;
+      bottom: 32px;
+      left: 64px;
+      right: 64px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--neutral);
+    }
+    
+    /* Print styles */
+    @media print {
+      .page {
+        width: 100%;
+        height: 100vh;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Cover -->
+  <div class="page cover">
+    <div class="cover-logo">
+      <svg width="120" height="126" viewBox="0 0 154 162" fill="none">
+        <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
+        <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+      </svg>
+    </div>
+    <h1>Human<span>Program</span></h1>
+    <p class="cover-subtitle">Brand Guidelines & Visual Identity</p>
+    <p class="cover-date">December 2025</p>
+  </div>
+
+  <!-- Page 2: Logo -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">01</p>
+      <h2 class="section-title">Logo</h2>
+      <p class="section-desc">The Human Program logo consists of a distinctive star icon within a tilted rounded rectangle, paired with the wordmark.</p>
+    </div>
+    
+    <div class="logo-grid">
+      <div class="logo-card dark">
+        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
+          <g transform="scale(0.37) translate(0, 0)">
+            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
+            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+          </g>
+          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="white">Human</text>
+          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="white">Program</text>
+        </svg>
+        <span class="logo-card-label">Primary — Dark Background</span>
+      </div>
+      
+      <div class="logo-card light">
+        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
+          <g transform="scale(0.37) translate(0, 0)">
+            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
+            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+          </g>
+          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="#1B1F29">Human</text>
+          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="#1B1F29">Program</text>
+        </svg>
+        <span class="logo-card-label">Primary — Light Background</span>
+      </div>
+      
+      <div class="logo-card lilac">
+        <svg class="logo-full" viewBox="0 0 320 60" fill="none">
+          <g transform="scale(0.37) translate(0, 0)">
+            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="white"/>
+            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="#9381FF"/>
+          </g>
+          <text x="72" y="32" font-family="Outfit" font-size="32" font-weight="700" fill="white">Human</text>
+          <text x="72" y="54" font-family="Outfit" font-size="28" font-weight="400" fill="white">Program</text>
+        </svg>
+        <span class="logo-card-label">Reversed — Brand Background</span>
+      </div>
+      
+      <div class="logo-card dark">
+        <svg class="logo-icon" viewBox="0 0 154 162" fill="none">
+          <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
+          <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+        </svg>
+        <span class="logo-card-label">Icon — Color</span>
+      </div>
+      
+      <div class="logo-card light">
+        <svg class="logo-icon" viewBox="0 0 154 162" fill="none">
+          <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#121214"/>
+          <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+        </svg>
+        <span class="logo-card-label">Icon — Black</span>
+      </div>
+      
+      <div class="logo-card light">
+        <svg class="logo-stacked" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="100" fill="#1B1F29"/>
+          <g transform="translate(78, 38) scale(0.3)">
+            <path d="M138.716 0H53.9058L53.7688 -1.21527e-05C49.6659 -0.000559733 47.6005 -0.000835385 43.2357 4.51969C38.8225 9.09024 3.64913 64.51 3.64913 64.51C1.80789 66.9607 0.716797 70.0071 0.716797 73.3084V146.617C0.716797 154.714 7.28105 161.279 15.3785 161.279H94.5516C98.4018 161.279 101.905 159.794 104.522 157.367L149.121 112.748C151.82 110.092 153.492 106.409 153.492 102.339V14.6617C153.492 6.56426 146.876 0 138.716 0Z" fill="#B3A6FF"/>
+            <path d="M97.3107 14.1628C97.6336 12.6503 99.8137 12.7155 100.046 14.2446C102.734 31.9688 115.698 46.4004 133.034 50.9669L140.61 52.9624C142.338 53.4176 142.365 55.8606 140.648 56.3549L132.071 58.8234C115.24 63.6674 102.747 77.8341 100.047 95.1385C99.8091 96.6609 97.6408 96.7275 97.3103 95.2225L97.1791 94.6255C93.3995 77.4184 80.6249 63.5923 63.7698 58.4662L56.9563 56.3941C55.2271 55.8682 55.2563 53.4098 56.9975 52.9252L62.7895 51.313C80.1673 46.4758 93.4202 32.3867 97.1862 14.7458L97.3107 14.1628Z" fill="white"/>
+          </g>
+          <text x="100" y="120" font-family="Outfit" font-size="30" font-weight="700" fill="white" text-anchor="middle">Human</text>
+          <text x="100" y="150" font-family="Outfit" font-size="24" font-weight="400" fill="white" text-anchor="middle">Program</text>
+        </svg>
+        <span class="logo-card-label">Badge</span>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>2 / 7</span>
+    </div>
+  </div>
+
+  <!-- Page 3: Primary Colors -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">02</p>
+      <h2 class="section-title">Color Palette — Primary</h2>
+      <p class="section-desc">Our core color system built around neutral tones and signature lilac accent.</p>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Neutral</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--white); border: 1px solid var(--neutral-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">White</p>
+            <p class="color-hex">#FFFFFF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#EBEFF8</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#C8CEDA</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#A5ACBA</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Neutral</p>
+            <p class="color-hex">#82899A</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#5F6678</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#3C4354</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--neutral-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#1B1F29</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Lilac — Brand Primary</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#F4F2FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#E9E5FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#B3A6FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lilac</p>
+            <p class="color-hex">#9381FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#7567CC</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#413872</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--lilac-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#2C264C</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>3 / 7</span>
+    </div>
+  </div>
+
+  <!-- Page 4: Secondary Colors -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">02</p>
+      <h2 class="section-title">Color Palette — Secondary</h2>
+      <p class="section-desc">Extended palette for UI states, feedback, and visual variety.</p>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Romantic</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#FFF7F2</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#FFE3D1</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#FFD8BE</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Romantic</p>
+            <p class="color-hex">#FFBE93</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#DBA481</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#A67150</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--romantic-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#573D2B</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Froly</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#FFE8E8</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#FCCFCF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#FFB3B3</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Froly</p>
+            <p class="color-hex">#FF8686</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#B44C4A</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#5C2726</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--froly-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#4A2323</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Malibu</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#F1FBFF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#E4F7FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#A0E3FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Malibu</p>
+            <p class="color-hex">#78D7FF</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#60ACCC</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#296E90</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--malibu-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#1B3F5A</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="color-section">
+      <h3 class="color-section-title">Green</h3>
+      <div class="color-row">
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-lightest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lightest</p>
+            <p class="color-hex">#FCFFF5</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-lighter);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Lighter</p>
+            <p class="color-hex">#FAFFEB</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-light);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Light</p>
+            <p class="color-hex">#F0FFBA</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Green</p>
+            <p class="color-hex">#EAFF9D</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-dark);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Dark</p>
+            <p class="color-hex">#BBCC7D</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-darker);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darker</p>
+            <p class="color-hex">#5D663E</p>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-block" style="background: var(--green-darkest);"></div>
+          <div class="color-swatch-info">
+            <p class="color-name">Darkest</p>
+            <p class="color-hex">#464C2F</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>4 / 7</span>
+    </div>
+  </div>
+
+  <!-- Page 5: Typography -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">03</p>
+      <h2 class="section-title">Typography</h2>
+      <p class="section-desc">Outfit is our primary typeface — modern, geometric, and highly legible across all sizes.</p>
+    </div>
+    
+    <div class="type-scale">
+      <div class="type-row" style="border-top: 1px solid var(--neutral-lighter); padding-top: 20px;">
+        <span class="type-label">Style</span>
+        <span class="type-label">Sample</span>
+        <span class="type-label">Desktop</span>
+        <span class="type-label">Mobile</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 1</span>
+        <span class="type-sample h1-sample">Aa</span>
+        <span class="type-size">72px</span>
+        <span class="type-size-mobile">40px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 2</span>
+        <span class="type-sample h2-sample">Aa</span>
+        <span class="type-size">52px</span>
+        <span class="type-size-mobile">36px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 3</span>
+        <span class="type-sample h3-sample">Aa</span>
+        <span class="type-size">44px</span>
+        <span class="type-size-mobile">32px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 4</span>
+        <span class="type-sample h4-sample">Aa</span>
+        <span class="type-size">36px</span>
+        <span class="type-size-mobile">24px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 5</span>
+        <span class="type-sample h5-sample">Aa</span>
+        <span class="type-size">28px</span>
+        <span class="type-size-mobile">20px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Heading 6</span>
+        <span class="type-sample h6-sample">Aa</span>
+        <span class="type-size">22px</span>
+        <span class="type-size-mobile">18px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Text Large</span>
+        <span class="type-sample text-lg">The quick brown fox jumps</span>
+        <span class="type-size">22px</span>
+        <span class="type-size-mobile">18px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Text Medium</span>
+        <span class="type-sample text-md">The quick brown fox jumps over the lazy dog</span>
+        <span class="type-size">18px</span>
+        <span class="type-size-mobile">16px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Text Regular</span>
+        <span class="type-sample text-reg">The quick brown fox jumps over the lazy dog</span>
+        <span class="type-size">16px</span>
+        <span class="type-size-mobile">16px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Text Small</span>
+        <span class="type-sample text-sm">The quick brown fox jumps over the lazy dog</span>
+        <span class="type-size">14px</span>
+        <span class="type-size-mobile">14px</span>
+      </div>
+      <div class="type-row">
+        <span class="type-label">Text Tiny</span>
+        <span class="type-sample text-xs">The quick brown fox jumps over the lazy dog</span>
+        <span class="type-size">12px</span>
+        <span class="type-size-mobile">12px</span>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>5 / 7</span>
+    </div>
+  </div>
+
+  <!-- Page 6: Spacing & Sizing -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">04</p>
+      <h2 class="section-title">Spacing & Sizing</h2>
+      <p class="section-desc">Consistent spacing tokens for layout and component design. Values shown as Desktop / Mobile.</p>
+    </div>
+    
+    <div class="spacing-grid">
+      <div class="spacing-group">
+        <h3 class="spacing-group-title">Containers</h3>
+        <div class="spacing-item">
+          <span class="spacing-name">Small</span>
+          <span class="spacing-value">768px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Medium</span>
+          <span class="spacing-value">1024px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Large</span>
+          <span class="spacing-value">1280px</span>
+        </div>
+      </div>
+      
+      <div class="spacing-group">
+        <h3 class="spacing-group-title">Max Widths</h3>
+        <div class="spacing-item">
+          <span class="spacing-name">XXSmall</span>
+          <span class="spacing-value">320px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">XSmall</span>
+          <span class="spacing-value">400px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Small</span>
+          <span class="spacing-value">480px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Medium</span>
+          <span class="spacing-value">560px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Large</span>
+          <span class="spacing-value">768px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">XLarge</span>
+          <span class="spacing-value">1024px</span>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">XXLarge</span>
+          <span class="spacing-value">1280px</span>
+        </div>
+      </div>
+      
+      <div class="spacing-group">
+        <h3 class="spacing-group-title">Section Padding</h3>
+        <div class="spacing-item">
+          <span class="spacing-name">Small</span>
+          <div class="spacing-values">
+            <span class="spacing-value">48px</span>
+            <span class="spacing-value mobile">32px</span>
+          </div>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Medium</span>
+          <div class="spacing-values">
+            <span class="spacing-value">80px</span>
+            <span class="spacing-value mobile">48px</span>
+          </div>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Large</span>
+          <div class="spacing-values">
+            <span class="spacing-value">112px</span>
+            <span class="spacing-value mobile">64px</span>
+          </div>
+        </div>
+        <h3 class="spacing-group-title" style="margin-top: 24px;">Page Padding</h3>
+        <div class="spacing-item">
+          <span class="spacing-name">Global</span>
+          <div class="spacing-values">
+            <span class="spacing-value">64px</span>
+            <span class="spacing-value mobile">20px</span>
+          </div>
+        </div>
+        <div class="spacing-item">
+          <span class="spacing-name">Global Full</span>
+          <div class="spacing-values">
+            <span class="spacing-value">45px</span>
+            <span class="spacing-value mobile">0px</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>6 / 7</span>
+    </div>
+  </div>
+
+  <!-- Page 7: UI Styles -->
+  <div class="page">
+    <div class="section-header">
+      <p class="section-number">05</p>
+      <h2 class="section-title">UI Styles</h2>
+      <p class="section-desc">Border radius and stroke specifications for consistent component styling.</p>
+    </div>
+    
+    <div class="ui-grid">
+      <div class="ui-group">
+        <h3 class="ui-group-title">Border Radius</h3>
+        <div class="radius-samples">
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 0;"></div>
+            <p class="radius-label">None<span>0px</span></p>
+          </div>
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 5px;"></div>
+            <p class="radius-label">X-Small<span>5px</span></p>
+          </div>
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 12px;"></div>
+            <p class="radius-label">Small<span>12px</span></p>
+          </div>
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 24px;"></div>
+            <p class="radius-label">Medium<span>24px</span></p>
+          </div>
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 36px;"></div>
+            <p class="radius-label">Large<span>50px</span></p>
+          </div>
+          <div class="radius-sample">
+            <div class="radius-box" style="border-radius: 999px;"></div>
+            <p class="radius-label">Round<span>999px</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ui-group">
+        <h3 class="ui-group-title">Strokes</h3>
+        <div class="stroke-samples">
+          <div class="stroke-sample">
+            <div class="stroke-demo border"></div>
+            <p class="stroke-label">Border<span>1px</span></p>
+          </div>
+          <div class="stroke-sample">
+            <div class="stroke-demo divider"></div>
+            <p class="stroke-label">Divider<span>2px</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="opacity-grid" style="margin-top: 48px;">
+      <div class="opacity-section dark-demo">
+        <h4 class="opacity-section-title">White Opacity Scale</h4>
+        <div class="opacity-row">
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.05);"><span style="color: rgba(255,255,255,0.5);">5%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.10);"><span style="color: rgba(255,255,255,0.6);">10%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.15);"><span style="color: rgba(255,255,255,0.7);">15%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.20);"><span style="color: rgba(255,255,255,0.8);">20%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.30);"><span style="color: rgba(255,255,255,0.9);">30%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.40);"><span style="color: var(--neutral-darkest);">40%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.50);"><span style="color: var(--neutral-darkest);">50%</span></div>
+          <div class="opacity-swatch" style="background: rgba(255,255,255,0.60);"><span style="color: var(--neutral-darkest);">60%</span></div>
+        </div>
+      </div>
+      
+      <div class="opacity-section">
+        <h4 class="opacity-section-title">Neutral Darkest Opacity Scale</h4>
+        <div class="opacity-row">
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.05);"><span style="color: var(--neutral);">5%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.10);"><span style="color: var(--neutral-dark);">10%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.15);"><span style="color: var(--neutral-dark);">15%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.20);"><span style="color: var(--white);">20%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.30);"><span style="color: var(--white);">30%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.40);"><span style="color: var(--white);">40%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.50);"><span style="color: var(--white);">50%</span></div>
+          <div class="opacity-swatch" style="background: rgba(27,31,41,0.60);"><span style="color: var(--white);">60%</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-footer">
+      <span>Human Program — Brand Kit</span>
+      <span>7 / 7</span>
+    </div>
+  </div>
+
+</body>
+</html>
