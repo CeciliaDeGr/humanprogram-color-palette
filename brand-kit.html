@@ -29,41 +29,41 @@
       --lilac-darker: #413872;
       --lilac-darkest: #2C264C;
       
-      /* Romantic */
-      --romantic-lightest: #FFF7F2;
-      --romantic-lighter: #FFE3D1;
-      --romantic-light: #FFD8BE;
-      --romantic: #FFBE93;
-      --romantic-dark: #DBA481;
-      --romantic-darker: #A67150;
-      --romantic-darkest: #573D2B;
+      /* Orange - H≈30°, even lightness steps */
+      --orange-lightest: #FFF6ED;  /* L=97%, S=100% */
+      --orange-lighter: #FFDDB8;   /* L=86%, S=100% */
+      --orange-light: #FFC278;     /* L=74%, S=100% */
+      --orange: #FFA53A;           /* L=62%, S=100% - brighter base */
+      --orange-dark: #D4851E;      /* L=48%, S=75% */
+      --orange-darker: #9C5F10;    /* L=34%, S=82% */
+      --orange-darkest: #5C3709;   /* L=20%, S=80% */
       
-      /* Froly */
-      --froly-lightest: #FFE8E8;
-      --froly-lighter: #FCCFCF;
-      --froly-light: #FFB3B3;
-      --froly: #FF8686;
-      --froly-dark: #B44C4A;
-      --froly-darker: #5C2726;
-      --froly-darkest: #4A2323;
+      /* Pink */
+      --pink-lightest: #FFE8E8;
+      --pink-lighter: #FCCFCF;
+      --pink-light: #FFB3B3;
+      --pink: #FF8686;
+      --pink-dark: #B44C4A;
+      --pink-darker: #5C2726;
+      --pink-darkest: #4A2323;
       
-      /* Malibu */
-      --malibu-lightest: #F1FBFF;
-      --malibu-lighter: #E4F7FF;
-      --malibu-light: #A0E3FF;
-      --malibu: #78D7FF;
-      --malibu-dark: #60ACCC;
-      --malibu-darker: #296E90;
-      --malibu-darkest: #1B3F5A;
+      /* Blue */
+      --blue-lightest: #F1FBFF;
+      --blue-lighter: #E4F7FF;
+      --blue-light: #A0E3FF;
+      --blue: #78D7FF;
+      --blue-dark: #60ACCC;
+      --blue-darker: #296E90;
+      --blue-darkest: #1B3F5A;
       
-      /* Green */
-      --green-lightest: #FCFFF5;
-      --green-lighter: #FAFFEB;
-      --green-light: #F0FFBA;
-      --green: #EAFF9D;
-      --green-dark: #BBCC7D;
-      --green-darker: #5D663E;
-      --green-darkest: #464C2F;
+      /* Green - Lime/Chartreuse H≈73°, even lightness steps */
+      --green-lightest: #FAFFEB;  /* L=96%, S=100% */
+      --green-lighter: #ECFAAB;   /* L=83%, S=90% */
+      --green-light: #D6F268;     /* L=70%, S=88% */
+      --green: #C0E832;           /* L=58%, S=85% - base */
+      --green-dark: #9FC426;      /* L=46%, S=70% */
+      --green-darker: #749119;    /* L=33%, S=60% */
+      --green-darkest: #455710;   /* L=20%, S=65% */
       
       /* UI */
       --radius-none: 0px;
@@ -209,7 +209,7 @@
       margin-top: 32px;
       margin-left: 64px;
       padding: 10px 18px;
-      background: var(--froly);
+      background: var(--pink);
       color: var(--white);
       font-size: 13px;
       font-weight: 600;
@@ -220,7 +220,7 @@
     }
     
     .toc-download-btn:hover {
-      background: var(--froly-dark);
+      background: var(--pink-dark);
       transform: translateY(-1px);
     }
     
@@ -810,7 +810,7 @@
       align-items: center;
       gap: 6px;
       padding: 8px;
-      background: var(--froly);
+      background: var(--pink);
       border-radius: 8px;
       margin-bottom: 8px;
     }
@@ -942,7 +942,7 @@
     .profile-tab-icon {
       width: 10px;
       height: 2px;
-      background: var(--froly);
+      background: var(--pink);
       border-radius: 1px;
     }
     
@@ -952,7 +952,7 @@
       display: block;
       width: 10px;
       height: 2px;
-      background: var(--froly);
+      background: var(--pink);
       border-radius: 1px;
     }
     
@@ -1007,7 +1007,7 @@
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      background: var(--malibu);
+      background: var(--blue);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1023,7 +1023,7 @@
       right: -2px;
       width: 12px;
       height: 12px;
-      background: var(--malibu-dark);
+      background: var(--blue-dark);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1084,7 +1084,7 @@
     }
     
     .profile-screen.light-theme .profile-stat:nth-child(4) .profile-stat-value {
-      color: var(--romantic-dark);
+      color: var(--orange-dark);
     }
     
     .profile-stat-label {
@@ -1101,7 +1101,7 @@
     }
     
     .profile-knowledge-card {
-      background: var(--romantic-dark);
+      background: var(--orange-dark);
       border-radius: 12px;
       padding: 10px;
       margin-bottom: 6px;
@@ -1191,7 +1191,7 @@
     .profile-progress-fill {
       height: 100%;
       width: 10%;
-      background: var(--romantic);
+      background: var(--orange);
       border-radius: 2px;
     }
     
@@ -1212,11 +1212,11 @@
     }
     
     .profile-progress-dot.orange {
-      background: var(--romantic);
+      background: var(--orange);
     }
     
     .profile-progress-dot.green {
-      background: var(--malibu);
+      background: var(--blue);
     }
     
     .profile-placement-btn {
@@ -1244,7 +1244,7 @@
     }
     
     .profile-action-btn.green {
-      background: var(--malibu);
+      background: var(--blue);
     }
     
     .profile-screen.light-theme .profile-action-btn.green {
@@ -1252,7 +1252,7 @@
     }
     
     .profile-action-btn.pink {
-      background: var(--froly);
+      background: var(--pink);
     }
     
     .profile-screen.light-theme .profile-action-btn.pink {
@@ -1290,7 +1290,7 @@
     }
     
     .profile-topic-card.orange {
-      background: var(--romantic);
+      background: var(--orange);
     }
     
     .profile-screen.light-theme .profile-topic-card.orange {
@@ -1298,7 +1298,7 @@
     }
     
     .profile-topic-card.green {
-      background: var(--malibu-dark);
+      background: var(--blue-dark);
     }
     
     .profile-screen.light-theme .profile-topic-card.green {
@@ -1311,12 +1311,12 @@
       left: 6px;
       width: 12px;
       height: 16px;
-      background: var(--romantic-dark);
+      background: var(--orange-dark);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
     }
     
     .profile-topic-card.green .profile-topic-bookmark {
-      background: var(--malibu-darker);
+      background: var(--blue-darker);
     }
     
     .profile-topic-date {
@@ -1701,52 +1701,52 @@
     </div>
     
     <div class="color-section">
-      <h3 class="color-section-title">Romantic</h3>
+      <h3 class="color-section-title">Orange</h3>
       <div class="color-row">
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-lightest);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-lightest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lightest</p>
             <p class="color-hex">#FFF7F2</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-lighter);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-lighter);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lighter</p>
             <p class="color-hex">#FFE3D1</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-light);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-light);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Light</p>
             <p class="color-hex">#FFD8BE</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic);"></div>
+          <div class="color-swatch-block" style="background: var(--orange);"></div>
           <div class="color-swatch-info">
-            <p class="color-name">Romantic</p>
+            <p class="color-name">Orange</p>
             <p class="color-hex">#FFBE93</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-dark);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-dark);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Dark</p>
             <p class="color-hex">#DBA481</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-darker);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-darker);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darker</p>
             <p class="color-hex">#A67150</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--romantic-darkest);"></div>
+          <div class="color-swatch-block" style="background: var(--orange-darkest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darkest</p>
             <p class="color-hex">#573D2B</p>
@@ -1756,52 +1756,52 @@
     </div>
     
     <div class="color-section">
-      <h3 class="color-section-title">Froly</h3>
+      <h3 class="color-section-title">Pink</h3>
       <div class="color-row">
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-lightest);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-lightest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lightest</p>
             <p class="color-hex">#FFE8E8</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-lighter);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-lighter);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lighter</p>
             <p class="color-hex">#FCCFCF</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-light);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-light);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Light</p>
             <p class="color-hex">#FFB3B3</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly);"></div>
+          <div class="color-swatch-block" style="background: var(--pink);"></div>
           <div class="color-swatch-info">
-            <p class="color-name">Froly</p>
+            <p class="color-name">Pink</p>
             <p class="color-hex">#FF8686</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-dark);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-dark);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Dark</p>
             <p class="color-hex">#B44C4A</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-darker);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-darker);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darker</p>
             <p class="color-hex">#5C2726</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--froly-darkest);"></div>
+          <div class="color-swatch-block" style="background: var(--pink-darkest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darkest</p>
             <p class="color-hex">#4A2323</p>
@@ -1811,52 +1811,52 @@
     </div>
     
     <div class="color-section">
-      <h3 class="color-section-title">Malibu</h3>
+      <h3 class="color-section-title">Blue</h3>
       <div class="color-row">
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-lightest);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-lightest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lightest</p>
             <p class="color-hex">#F1FBFF</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-lighter);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-lighter);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Lighter</p>
             <p class="color-hex">#E4F7FF</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-light);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-light);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Light</p>
             <p class="color-hex">#A0E3FF</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu);"></div>
+          <div class="color-swatch-block" style="background: var(--blue);"></div>
           <div class="color-swatch-info">
-            <p class="color-name">Malibu</p>
+            <p class="color-name">Blue</p>
             <p class="color-hex">#78D7FF</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-dark);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-dark);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Dark</p>
             <p class="color-hex">#60ACCC</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-darker);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-darker);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darker</p>
             <p class="color-hex">#296E90</p>
           </div>
         </div>
         <div class="color-swatch">
-          <div class="color-swatch-block" style="background: var(--malibu-darkest);"></div>
+          <div class="color-swatch-block" style="background: var(--blue-darkest);"></div>
           <div class="color-swatch-info">
             <p class="color-name">Darkest</p>
             <p class="color-hex">#1B3F5A</p>
@@ -2448,7 +2448,7 @@
                 <span>Profile</span>
               </div>
               <div class="profile-header-icons">
-                <div class="profile-icon-btn" style="color: var(--malibu);">
+                <div class="profile-icon-btn" style="color: var(--blue);">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                     <circle cx="8.5" cy="7" r="4"/>
@@ -2456,7 +2456,7 @@
                     <line x1="23" y1="11" x2="17" y2="11"/>
                   </svg>
                 </div>
-                <div class="profile-icon-btn" style="color: var(--froly);">
+                <div class="profile-icon-btn" style="color: var(--pink);">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="18" cy="5" r="3"/>
                     <circle cx="6" cy="12" r="3"/>
