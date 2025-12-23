@@ -128,8 +128,34 @@
     /* Main Content */
     .main {
       padding: 64px;
-      width: 1440px;
-      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    @media (max-width: 1024px) {
+      .main {
+        padding: 48px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .main {
+        padding: 32px;
+      }
+      
+      .assets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main {
+        padding: 20px;
+      }
+      
+      .assets-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Section */

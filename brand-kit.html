@@ -96,12 +96,13 @@
     }
     
     .page {
-      width: 1440px;
+      width: 100%;
       min-height: 900px;
       padding: 64px;
       page-break-after: always;
       position: relative;
       overflow: hidden;
+      box-sizing: border-box;
     }
     
     .page:last-child {
@@ -121,6 +122,12 @@
     .cover-logo {
       margin-bottom: 48px;
       margin-top: -80px;
+    }
+    
+    .cover-title-img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
     }
     
     .cover h1 {
@@ -883,6 +890,448 @@
       color: var(--neutral-dark);
       max-width: 300px;
     }
+
+    /* Profile Mockup Styles */
+    .profile-screen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding: 36px 12px 20px 12px;
+    }
+    
+    .profile-screen.dark-theme {
+      background: var(--neutral-darkest);
+    }
+    
+    .profile-screen.light-theme {
+      background: var(--neutral-lightest);
+    }
+    
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+      margin-bottom: 8px;
+    }
+    
+    .profile-tab {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 8px;
+      font-weight: 600;
+    }
+    
+    .profile-screen.dark-theme .profile-tab {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+    }
+    
+    .profile-screen.light-theme .profile-tab {
+      background: var(--white);
+      color: var(--neutral-darkest);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    .profile-tab-icon {
+      width: 10px;
+      height: 2px;
+      background: var(--froly);
+      border-radius: 1px;
+    }
+    
+    .profile-tab-icon::before,
+    .profile-tab-icon::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 2px;
+      background: var(--froly);
+      border-radius: 1px;
+    }
+    
+    .profile-tab-icon::before {
+      margin-bottom: 2px;
+    }
+    
+    .profile-tab-icon::after {
+      margin-top: 2px;
+    }
+    
+    .profile-header-icons {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .profile-icon-btn {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .profile-screen.dark-theme .profile-icon-btn {
+      color: var(--white);
+    }
+    
+    .profile-screen.light-theme .profile-icon-btn {
+      color: var(--lilac);
+    }
+    
+    .profile-user-card {
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .profile-screen.dark-theme .profile-user-card {
+      background: rgba(255,255,255,0.08);
+    }
+    
+    .profile-screen.light-theme .profile-user-card {
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    
+    .profile-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--malibu);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      position: relative;
+    }
+    
+    .profile-avatar-badge {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 12px;
+      height: 12px;
+      background: var(--malibu-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .profile-user-info {
+      flex: 1;
+    }
+    
+    .profile-user-name {
+      font-size: 10px;
+      font-weight: 700;
+    }
+    
+    .profile-screen.dark-theme .profile-user-name {
+      color: var(--white);
+    }
+    
+    .profile-screen.light-theme .profile-user-name {
+      color: var(--neutral-darkest);
+    }
+    
+    .profile-user-email {
+      font-size: 7px;
+    }
+    
+    .profile-screen.dark-theme .profile-user-email {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .profile-screen.light-theme .profile-user-email {
+      color: var(--neutral);
+    }
+    
+    .profile-stats-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 4px;
+      margin-bottom: 8px;
+    }
+    
+    .profile-stat {
+      text-align: center;
+    }
+    
+    .profile-stat-value {
+      font-size: 11px;
+      font-weight: 700;
+    }
+    
+    .profile-screen.dark-theme .profile-stat-value {
+      color: var(--white);
+    }
+    
+    .profile-screen.light-theme .profile-stat-value {
+      color: var(--neutral-darker);
+    }
+    
+    .profile-screen.light-theme .profile-stat:nth-child(4) .profile-stat-value {
+      color: var(--romantic-dark);
+    }
+    
+    .profile-stat-label {
+      font-size: 6px;
+      line-height: 1.2;
+    }
+    
+    .profile-screen.dark-theme .profile-stat-label {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .profile-screen.light-theme .profile-stat-label {
+      color: var(--neutral);
+    }
+    
+    .profile-knowledge-card {
+      background: var(--romantic-dark);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 6px;
+    }
+    
+    .profile-screen.light-theme .profile-knowledge-card {
+      box-shadow: 0 4px 16px rgba(219, 164, 129, 0.4);
+    }
+    
+    .profile-knowledge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .profile-knowledge-title {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .profile-knowledge-value {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    
+    .profile-exam-btn {
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    
+    .profile-course-card {
+      background: var(--lilac);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    
+    .profile-screen.light-theme .profile-course-card {
+      box-shadow: 0 4px 16px rgba(147, 129, 255, 0.3);
+    }
+    
+    .profile-course-badge {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      color: var(--lilac);
+      font-size: 6px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    
+    .profile-course-title {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .profile-progress-bar {
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      margin-bottom: 4px;
+      overflow: hidden;
+    }
+    
+    .profile-progress-fill {
+      height: 100%;
+      width: 10%;
+      background: var(--romantic);
+      border-radius: 2px;
+    }
+    
+    .profile-progress-labels {
+      display: flex;
+      gap: 12px;
+      font-size: 6px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 8px;
+    }
+    
+    .profile-progress-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 2px;
+    }
+    
+    .profile-progress-dot.orange {
+      background: var(--romantic);
+    }
+    
+    .profile-progress-dot.green {
+      background: var(--malibu);
+    }
+    
+    .profile-placement-btn {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    
+    .profile-action-btn {
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    
+    .profile-action-btn.green {
+      background: var(--malibu);
+    }
+    
+    .profile-screen.light-theme .profile-action-btn.green {
+      box-shadow: 0 4px 12px rgba(120, 215, 255, 0.4);
+    }
+    
+    .profile-action-btn.pink {
+      background: var(--froly);
+    }
+    
+    .profile-screen.light-theme .profile-action-btn.pink {
+      box-shadow: 0 4px 12px rgba(255, 134, 134, 0.4);
+    }
+    
+    .profile-topics-section {
+      margin-top: 6px;
+    }
+    
+    .profile-topics-title {
+      font-size: 9px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    
+    .profile-screen.dark-theme .profile-topics-title {
+      color: var(--white);
+    }
+    
+    .profile-screen.light-theme .profile-topics-title {
+      color: var(--neutral-darkest);
+    }
+    
+    .profile-topics-row {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .profile-topic-card {
+      flex: 1;
+      border-radius: 8px;
+      padding: 6px;
+      position: relative;
+    }
+    
+    .profile-topic-card.orange {
+      background: var(--romantic);
+    }
+    
+    .profile-screen.light-theme .profile-topic-card.orange {
+      box-shadow: 0 3px 10px rgba(255, 190, 147, 0.4);
+    }
+    
+    .profile-topic-card.green {
+      background: var(--malibu-dark);
+    }
+    
+    .profile-screen.light-theme .profile-topic-card.green {
+      box-shadow: 0 3px 10px rgba(96, 172, 204, 0.4);
+    }
+    
+    .profile-topic-bookmark {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 12px;
+      height: 16px;
+      background: var(--romantic-dark);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+    }
+    
+    .profile-topic-card.green .profile-topic-bookmark {
+      background: var(--malibu-darker);
+    }
+    
+    .profile-topic-date {
+      font-size: 6px;
+      color: rgba(255,255,255,0.8);
+      text-align: right;
+      margin-bottom: 4px;
+    }
+    
+    .profile-topic-name {
+      font-size: 7px;
+      font-weight: 600;
+      color: var(--white);
+      text-align: center;
+    }
     
     /* Page decoration */
     .page-footer {
@@ -894,6 +1343,113 @@
       justify-content: space-between;
       font-size: 12px;
       color: var(--neutral);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .page {
+        padding: 48px;
+      }
+      
+      .page-footer {
+        left: 48px;
+        right: 48px;
+      }
+      
+      .app-theme-grid {
+        gap: 32px;
+      }
+      
+      .phone-mockup {
+        width: 240px;
+        height: 480px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .page {
+        padding: 32px;
+        min-height: auto;
+      }
+      
+      .page-footer {
+        left: 32px;
+        right: 32px;
+        position: relative;
+        bottom: auto;
+        margin-top: 48px;
+      }
+      
+      .section-header {
+        margin-bottom: 32px;
+      }
+      
+      .section-title {
+        font-size: 36px;
+      }
+      
+      .app-theme-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      
+      .phone-mockup {
+        width: 260px;
+        height: 520px;
+      }
+      
+      .color-grid,
+      .spacing-grid,
+      .ui-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .type-scale {
+        overflow-x: auto;
+      }
+      
+      .toc-list {
+        padding-left: 32px;
+      }
+      
+      .toc-title {
+        padding-left: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page {
+        padding: 20px;
+      }
+      
+      .page-footer {
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .logo-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .phone-mockup {
+        width: 220px;
+        height: 440px;
+      }
+      
+      .cover-title-img {
+        max-width: 280px;
+      }
     }
     
     /* Print styles */
@@ -911,7 +1467,7 @@
   <!-- Page 1: Cover -->
   <div class="page cover">
     <div class="cover-logo">
-      <img src="assets/graphics/outlined-round-title.png" alt="Human Program" style="max-width: 400px; height: auto;">
+      <img src="assets/graphics/outlined-round-title.png" alt="Human Program" class="cover-title-img">
     </div>
     <p class="cover-subtitle">Brand Guidelines & Visual Identity</p>
     <p class="cover-date">December 2025</p>
@@ -1709,151 +2265,362 @@
       </div>
     </div>
     
-    <!-- App UI -->
-    <h3 style="font-size: 22px; font-weight: 600; color: var(--neutral-darkest); margin: 48px 0 24px 0;">App Interface</h3>
+    <!-- Profile Screen -->
+    <h3 style="font-size: 22px; font-weight: 600; color: var(--neutral-darkest); margin: 48px 0 24px 0;">Profile Screen</h3>
     <div class="app-theme-grid">
+      <!-- Dark Theme Profile -->
       <div class="app-theme-card">
         <div class="phone-mockup">
-          <div class="phone-screen dark-theme">
+          <div class="profile-screen dark-theme">
             <div class="phone-notch"></div>
-            <div class="app-sidebar">
-              <div class="app-sidebar-header">
-                <span class="app-sidebar-title">Menu</span>
-                <div class="app-token-badge">
-                  <img src="assets/app/notification/png/notification.png" alt="" class="app-token-icon">
-                  <span>51</span>
-                </div>
+            
+            <!-- Header -->
+            <div class="profile-header">
+              <div class="profile-tab">
+                <div class="profile-tab-icon"></div>
+                <span>Profile</span>
               </div>
-              <div class="app-menu">
-                <div class="app-menu-item active">
-                  <div class="app-menu-icon"></div>
-                  <span>Learn</span>
+              <div class="profile-header-icons">
+                <div class="profile-icon-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="8.5" cy="7" r="4"/>
+                    <line x1="20" y1="8" x2="20" y2="14"/>
+                    <line x1="23" y1="11" x2="17" y2="11"/>
+                  </svg>
                 </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Courses</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Topics</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Profile</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Get Tokens</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Messages</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Rewards</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Settings</span>
+                <div class="profile-icon-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="18" cy="5" r="3"/>
+                    <circle cx="6" cy="12" r="3"/>
+                    <circle cx="18" cy="19" r="3"/>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                  </svg>
                 </div>
               </div>
             </div>
-            <div class="app-content">
-              <div class="app-content-header">
-                <span class="app-content-title">Human Prgm</span>
-              </div>
-              <div class="app-chat-bubble">
-                <p class="app-chat-text">Hello! 👋</p>
-                <p class="app-chat-text" style="margin-top: 4px;">Choose your study mode:</p>
-                <div class="app-chat-options">
-                  <div class="app-chat-option">Continue studying</div>
-                  <div class="app-chat-option">Help on homework</div>
-                  <div class="app-chat-option">Test my knowledge</div>
+            
+            <!-- User Card -->
+            <div class="profile-user-card">
+              <div class="profile-avatar">
+                A
+                <div class="profile-avatar-badge">
+                  <svg width="6" height="6" viewBox="0 0 24 24" fill="white">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
                 </div>
               </div>
+              <div class="profile-user-info">
+                <div class="profile-user-name">admin</div>
+                <div class="profile-user-email">user@humanprogram.com</div>
+              </div>
             </div>
+            
+            <!-- Stats Row -->
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <div class="profile-stat-value">4</div>
+                <div class="profile-stat-label">Topics<br>learned</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">1</div>
+                <div class="profile-stat-label">Days<br>in a row</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">8.9</div>
+                <div class="profile-stat-label">Hours<br>spent</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">2288</div>
+                <div class="profile-stat-label">Token<br>balance</div>
+              </div>
+            </div>
+            
+            <!-- Knowledge Score Card -->
+            <div class="profile-knowledge-card">
+              <div class="profile-knowledge-header">
+                <div class="profile-knowledge-title">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  Knowledge Score
+                </div>
+                <div class="profile-knowledge-value">0.06%</div>
+              </div>
+              <div class="profile-exam-btn">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  Take Comprehensive Exam
+                </span>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Course Card -->
+            <div class="profile-course-card">
+              <div class="profile-course-badge">Course</div>
+              <div class="profile-course-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Universal School - Essentials
+              </div>
+              <div class="profile-progress-bar">
+                <div class="profile-progress-fill"></div>
+              </div>
+              <div class="profile-progress-labels">
+                <span><span class="profile-progress-dot orange"></span>Mastered 0.1%</span>
+                <span><span class="profile-progress-dot green"></span>Known 0.1%</span>
+              </div>
+              <div class="profile-placement-btn">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4M12 8h.01"/>
+                  </svg>
+                  Take Placement Exam
+                </span>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="profile-action-btn green">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Personal Information
+              </span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+            <div class="profile-action-btn pink">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"/>
+                  <line x1="8" y1="12" x2="21" y2="12"/>
+                  <line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/>
+                  <line x1="3" y1="12" x2="3.01" y2="12"/>
+                  <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+                Study Timeline
+              </span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+            
             <div class="phone-home-indicator"></div>
           </div>
         </div>
         <div class="app-theme-info">
-          <h3 class="app-theme-name">Dark Theme UI</h3>
-          <p class="app-theme-desc">Primary interface with dark sidebar and white content cards.</p>
+          <h3 class="app-theme-name">Dark Theme Profile</h3>
+          <p class="app-theme-desc">User profile with dark background and brand color cards.</p>
         </div>
       </div>
       
+      <!-- Light Theme Profile -->
       <div class="app-theme-card">
         <div class="phone-mockup">
-          <div class="phone-screen light-theme">
+          <div class="profile-screen light-theme">
             <div class="phone-notch"></div>
-            <div class="app-sidebar">
-              <div class="app-sidebar-header">
-                <span class="app-sidebar-title">Menu</span>
-                <div class="app-token-badge">
-                  <img src="assets/app/notification/png/notification.png" alt="" class="app-token-icon">
-                  <span>51</span>
-                </div>
+            
+            <!-- Header -->
+            <div class="profile-header">
+              <div class="profile-tab">
+                <div class="profile-tab-icon"></div>
+                <span>Profile</span>
               </div>
-              <div class="app-menu">
-                <div class="app-menu-item active">
-                  <div class="app-menu-icon"></div>
-                  <span>Learn</span>
+              <div class="profile-header-icons">
+                <div class="profile-icon-btn" style="color: var(--malibu);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="8.5" cy="7" r="4"/>
+                    <line x1="20" y1="8" x2="20" y2="14"/>
+                    <line x1="23" y1="11" x2="17" y2="11"/>
+                  </svg>
                 </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Courses</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Topics</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Profile</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Get Tokens</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Messages</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Leaderboard</span>
-                </div>
-                <div class="app-menu-item">
-                  <div class="app-menu-icon"></div>
-                  <span>Settings</span>
+                <div class="profile-icon-btn" style="color: var(--froly);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="18" cy="5" r="3"/>
+                    <circle cx="6" cy="12" r="3"/>
+                    <circle cx="18" cy="19" r="3"/>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                  </svg>
                 </div>
               </div>
             </div>
-            <div class="app-content">
-              <div class="app-content-header">
-                <span class="app-content-title">Leaderboard</span>
+            
+            <!-- User Card -->
+            <div class="profile-user-card">
+              <div class="profile-avatar">
+                A
+                <div class="profile-avatar-badge">
+                  <svg width="6" height="6" viewBox="0 0 24 24" fill="white">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
+                </div>
               </div>
-              <div class="app-chat-bubble">
-                <p class="app-chat-text" style="font-weight: 600;">Completed Topics</p>
-                <div class="app-chat-options" style="margin-top: 6px;">
-                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
-                    <span style="font-weight: 600;">1</span> Ashish
-                  </div>
-                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
-                    <span style="font-weight: 600;">2</span> ritu
-                  </div>
-                  <div class="app-chat-option" style="display: flex; align-items: center; gap: 4px;">
-                    <span style="font-weight: 600;">3</span> Tim
-                  </div>
+              <div class="profile-user-info">
+                <div class="profile-user-name">admin</div>
+                <div class="profile-user-email">user@humanprogram.com</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lilac)" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Stats Row -->
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <div class="profile-stat-value">4</div>
+                <div class="profile-stat-label">Topics<br>learned</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">1</div>
+                <div class="profile-stat-label">Days<br>in a row</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">8.9</div>
+                <div class="profile-stat-label">Hours<br>spent</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-value">2288</div>
+                <div class="profile-stat-label">Token<br>balance</div>
+              </div>
+            </div>
+            
+            <!-- Knowledge Score Card -->
+            <div class="profile-knowledge-card">
+              <div class="profile-knowledge-header">
+                <div class="profile-knowledge-title">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  Knowledge Score
+                </div>
+                <div class="profile-knowledge-value">0.06%</div>
+              </div>
+              <div class="profile-exam-btn">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  Take Comprehensive Exam
+                </span>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Course Card -->
+            <div class="profile-course-card">
+              <div class="profile-course-badge">Course</div>
+              <div class="profile-course-title">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Universal School - Essentials
+              </div>
+              <div class="profile-progress-bar">
+                <div class="profile-progress-fill"></div>
+              </div>
+              <div class="profile-progress-labels">
+                <span><span class="profile-progress-dot orange"></span>Mastered 0.1%</span>
+                <span><span class="profile-progress-dot green"></span>Known 0.1%</span>
+              </div>
+              <div class="profile-placement-btn">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10 8 16 12 10 16 10 8"/>
+                  </svg>
+                  Take Placement Exam
+                </span>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="profile-action-btn green">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Personal Information
+              </span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+            <div class="profile-action-btn pink">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"/>
+                  <line x1="8" y1="12" x2="21" y2="12"/>
+                  <line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/>
+                  <line x1="3" y1="12" x2="3.01" y2="12"/>
+                  <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+                Study Timeline
+              </span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+            
+            <!-- Topics Section -->
+            <div class="profile-topics-section">
+              <div class="profile-topics-title">Topics learned</div>
+              <div class="profile-topics-row">
+                <div class="profile-topic-card orange">
+                  <div class="profile-topic-bookmark"></div>
+                  <div class="profile-topic-date">✓ 2025/10/01</div>
+                  <div class="profile-topic-name">Counting</div>
+                </div>
+                <div class="profile-topic-card green">
+                  <div class="profile-topic-bookmark"></div>
+                  <div class="profile-topic-date">✓ 2025/10/01</div>
+                  <div class="profile-topic-name">Numbers</div>
                 </div>
               </div>
             </div>
-            <div class="phone-home-indicator"></div>
+            
+            <div class="phone-home-indicator" style="background: rgba(0,0,0,0.2);"></div>
           </div>
         </div>
         <div class="app-theme-info">
-          <h3 class="app-theme-name">Light Theme UI</h3>
-          <p class="app-theme-desc">Lilac brand sidebar with white content cards.</p>
+          <h3 class="app-theme-name">Light Theme Profile</h3>
+          <p class="app-theme-desc">User profile with light background and brand color cards.</p>
         </div>
       </div>
     </div>
